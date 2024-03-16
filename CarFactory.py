@@ -1,18 +1,11 @@
 import engine
 import battery
+from car import Car
 from engine.capulet_engine import CapuletEngine
 from engine.willoughby_engine import WilloughbyEngine
 from engine.sternman_engine import SternmanEngine
 from battery import SpindlerBattery
 from battery import NubbinBattery
-
-class Car:
-    def __init__(self, engine: engine, battery: battery):
-        self.engine = engine
-        self.battery = battery
-    
-    def need_service() -> bool:
-        pass
 
 class CarFactory:
 
