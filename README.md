@@ -1,2 +1,5 @@
 # Starter Repo
-This repo has everything you need to get started on the program, good luck!
+
+## Project Overview
+This Python project provides a system to determine the serviceability of cars based on their engine and battery conditions. Utilizing principles of Object-Oriented Programming (OOP), it employs a composition over inheritance approach, where a car is composed of different parts, and each part has its own serviceability check.
+
