@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime
 
+import CarFactory
 from CarFactory import create_calliope
 from CarFactory import create_glissade
 from CarFactory import create_palindrome
@@ -41,6 +42,16 @@ class TestCalliope(unittest.TestCase):
         last_service_mileage = 0
 
         car = create_calliope(last_service_date, last_service_date, current_mileage, last_service_mileage)
+        self.assertFalse(car.needs_service())
+    
+    def test_tire_should_be_serviced(self):
+        wear_array = [0.1, 0.1, 0.9, 0.1]
+        car = CarFactory.create_calliope(..., wear_array)
+        self.assertTrue(car.needs_service())
+
+    def test_tire_should_not_be_serviced(self):
+        wear_array = [0.1, 0.1, 0.1, 0.1]
+        car = CarFactory.create_calliope(..., wear_array)
         self.assertFalse(car.needs_service())
 
 
